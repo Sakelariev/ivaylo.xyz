@@ -1,3 +1,7 @@
 *.csv
 data
 archive
+.Rproj.user
+.Rhistory
+.Rprofile
+.RData
