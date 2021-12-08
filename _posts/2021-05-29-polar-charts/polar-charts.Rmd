@@ -1,0 +1,137 @@
+---
+title: "Polar Charts"
+description: |
+  Полярните графики са визуално ефектни, но често могат да са трудни за разбиране и подвеждащи.
+draft: True
+date: 12-29-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Начина по който избираме да визуализираме данните много често играе основна роля в аргумента, който искаме да направим с нашия анализ. Често можем да подведем или да объркаме нашата аудитория ако не подберем правилно вида графика. Едни от най-противоречивите типове графики за визуализиране на данни са семейството на полярните графики (polar charts), известни още като . Те имат кръгла форма и често са по-естетически издържани от конвенционалните линейни графики, но могат да бъдат доста подвеждащи и да направят визуализацията ви неясна ако се използват неправилно. Аз лично смятам, че е по-добре да се избягват изцяло, но ще разгледам и случай, в който работят доста добре.
+
+Полярните графики са сред най-старите методи за визуализация на данни и една от техните форми води началото си до 1858 година, когато Флорънс Найтингейл използва polar area diagram, за да подчертае, че основната причини за смърт по време на Кримската война са инфекциозни болести. (Освен, че поставя основите на професионалната сестринска грижа, Флорънс Найтингейл също така е статистик и пионер във визуализирането на данни).
+
+```{r, include=FALSE}
+library(reticulate)
+use_condaenv(condaenv = "movement", required = TRUE)
+
+```
+
+
+```{r}
+temperature <- read.csv("city_temperature.csv", stringsAsFactors=FALSE)
+```
+
+
+```{r}
+library(tidyverse)
+as_tibble(temperature)
+```
+
+
+
+```{r}
+only_countries <- filter(temperature, City == "Sofia" | City == "Amsterdam" | City == "Reykjavik")
+```
+
+
+```{r}
+only_years <- filter(only_countries, Year == "2019")
+only_years <- select(only_years, City, Month, Day, AvgTemperature)
+```
+
+
+```{r}
+only_years <- only_years %>%
+    pivot_wider(names_from = City, values_from = AvgTemperature)
+```
+
+
+
+```{r}
+only_years$date <- as.Date(with(only_years, paste(2019, Month, Day,sep="-")), "%Y-%m-%d")
+```
+
+
+```{r}
+only_years <- dplyr::mutate(only_years, ID = row_number())
+```
+
+
+```{r}
+only_years <- only_years[only_years$Reykjavik != -99, ]
+```
+
+```{r}
+only_years
+```
+```{r}
+library(RcppRoll)
+
+only_years$mean_sofia <- roll_mean(only_years$Sofia, n = 7, align = "right", fill = NA)
+only_years$mean_amsterdam <- roll_mean(only_years$Amsterdam, n = 7, align = "right", fill = NA)
+only_years$mean_reykjavik <- roll_mean(only_years$Reykjavik, n = 7, align = "right", fill = NA)
+only_years$mean_sofia <- format(only_years$mean_sofia, digits = 3)
+only_years$mean_amsterdam <- format(only_years$mean_amsterdam, digits = 3)
+only_years$mean_reykjavik <- format(only_years$mean_reykjavik, digits = 3)
+```
+
+```{r}
+only_years
+```
+
+
+
+```{r}
+
+library(plotly)
+fig <- plot_ly(
+  only_years,
+  type = 'scatterpolar',
+  mode = 'lines'
+  ) 
+fig <- fig %>%
+  add_trace(
+    r = ~mean_sofia,
+    theta = ~ID,
+    name = 'София',
+    line = list(
+      color = 'peru'
+    )
+  ) 
+fig <- fig %>%
+  add_trace(
+    r = ~mean_amsterdam,
+    theta = ~ID,
+    name = 'Амстердам',
+    line = list(
+      color = 'darkviolet'
+    )
+  ) 
+fig <- fig %>%
+  layout(
+    title = 'Temperatures',
+    font = list(
+      family = 'PT-Sans',
+      size = 12,
+      color = '#000'
+    ),
+    showlegend = T
+  )
+
+fig
+```
+
+```{r}
+library(plotly)
+fig <- plot_ly(only_years, x = ~date, y = ~mean_sofia, name = 'Sofia', type = 'scatter', mode = 'lines') 
+fig <- fig %>% add_trace(y = ~mean_amsterdam, name = 'Amsterdam', mode = 'lines') 
+fig
+```
+

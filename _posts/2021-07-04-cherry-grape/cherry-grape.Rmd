@@ -1,0 +1,190 @@
+---
+title: "За черешите и гроздето. Една климатична история."
+description: "Бърз преглед на един от два популярни набора от данни, които имат връзка с глобалното затопляне."
+author:
+  - name: Ивайло Сакелариев
+    url: {}
+preview: static/cherry_grape.png
+date: 12-23-2021
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, include=FALSE}
+library(tidyverse)
+library(lubridate)
+library(plotly)
+new_data <- read_csv("/Users/ivo/Projects/ivaylo.xyz/data/cherries_grapes/kyoto_dates_cherryblossom2021.csv")
+Sys.setlocale("LC_TIME", "bg_BG.UTF-8")
+```
+
+```{r, include=FALSE}
+new_data <- new_data[complete.cases(new_data$Day) , ] # complete cases on doy
+
+new_data
+```
+
+
+```{r, include=FALSE}
+library(rethinking)
+data(cherry_blossoms)
+cherries <- cherry_blossoms
+precis(cherries)
+```
+
+
+
+```{r, include=FALSE}
+cherries2 <- cherries[ complete.cases(cherries$doy) , ] # complete cases on doy
+```
+
+
+```{r, include=FALSE}
+cherries2$doy <- as.integer(cherries2$doy)
+cherries2$date <- ymd(20210101) + days(cherries2$doy)
+cherries2 <- cherries2 %>%
+    mutate(date_month = format(as.Date(date), "%d %B"))
+```
+
+```{r, include=FALSE}
+cherries2 <-cherries2 %>% 
+  rename(
+    Година = year,
+    Дата = date_month
+    )
+```
+
+
+
+```{r, include=FALSE}
+# filter dataframe to get data to be highligheted
+highlight_cherries <- cherries2 %>% 
+             filter(Година>=2015)
+```
+
+```{r, include=FALSE}
+Sys.setlocale("LC_TIME", "bg_BG.UTF-8")
+```
+
+
+```{r, include=FALSE}
+cherries_graph <- ggplot(cherries2, aes(x=Година, y=doy, label=Дата)) +
+  geom_point(color='#980000', alpha=0.4)+
+  geom_smooth(se = FALSE, color = "grey30", method="loess", span=0.2)+
+  geom_ribbon(stat = "smooth",fill= "grey30", alpha = .50,  method="loess", span=0.2)+
+  geom_point(data=highlight_cherries, color='#980000',size=6)+
+  geom_text(data=highlight_cherries, label="4 Април 2015", nudge_y = -2.5, nudge_x = -45, )+
+  scale_y_continuous(labels = function(x) format(as.Date(as.character(x), "%j"), "%d %b"))+
+  theme_minimal()+
+  theme(panel.grid.minor.x=element_blank(),
+        panel.grid.major.x=element_blank(),
+        axis.title.y = element_text(size = 9))+
+  labs(x = "Година", y="Дата на цъфтеж на черешите")
+```
+
+```{r, include=FALSE}
+cherries_graph <-ggplotly(cherries_graph, autosize = T, width = 800, height = 450, tooltip=c("Дата","Година")) 
+```
+
+
+
+
+```{r, include=FALSE}
+cherries_temp <- cherries[ which(cherries$year > 875), ]
+cherries_temp <-cherries_temp %>% 
+  rename(
+    Година = year,
+    Температура = temp
+    )
+temperature_graph <- ggplot(cherries_temp, aes(x=Година, y=Температура)) +
+  geom_line(color='#006450')+
+  theme_minimal()+
+  theme(panel.grid.minor.x=element_blank(),
+        panel.grid.major.x=element_blank(),
+        axis.line.x = element_line(colour = 'black', size=0.5, linetype='solid'),
+        axis.title.y = element_text(size = 9, margin = margin(t = 0, r = 40, b = 0, l = 0)))+
+  scale_y_continuous(labels = function(x) paste0(x, "(\u00B0C)"))+
+  labs(x = "Година", y="Средна априлска температура в Киото", family = "sans serif")
+```
+
+
+```{r, include=FALSE}
+combined_cherries <- subplot(cherries_graph, temperature_graph, nrows = 2, margin = 0.03, heights = c(0.5, 0.5), shareX = TRUE, titleY = TRUE) 
+```
+Един от основните аргументи на скептиците срещу теорията за глобалното затопляне е липсата на достатъчно данни. Според някои учени като например Фред Сингер, моделите, които обясняват увеличаването на глобалните температури с резултат от човешки дейности (най-вече т. нар. "парникови газове" като CO2 ) са грешни и няма достатъчно доказателства, които да подкрепят тази връзка. 
+
+*Сингер е известен с доста противоречивите си позиции за няколко научни дебата, за които има сериозен научен консенсус. Освен глобалното затопляне, той отрича също така връзките между пасивното тютюнопушене и ракът на белия дроб, излагането на UV-лъчи и меланомата, както и изтъняването на озоновия слой в следствие на халоалкани. Ще обърна малко повече внимание на Сингер в една друга моя статия.*
+
+Факт е, че офицалното директно събиране на данни за температурата от съвременни институции започва сравнително скоро - около 1850 година с появата на първите термометри. Индиректно се използват т.нар climate proxies - различни физически характеристики като например темповете на растеж на дървестни пръстени или стабилни изотопни измервания от ледени ядра. 
+
+Аз не съм експерт в климатичните науки, затова тази публикация е по-скоро любителски поглед върху два доста любопитни за мен набора от данни. Ще разгледам два тренда, които макар и да не идват от данни, които повечето учени да считат за "надеждни", дават добра перспектива върху въпроса за глобалното затопляне. Климата зависи от множество фактори и няма единични фактори, които да обясняват различните феномени и това важи за следващите две визуализации. 
+
+### Цъфтеж на японски вишни в Киото
+
+Японската вишна се е превърнала в един от символите на японската култура и има цял културен обичай, организиран около вишните  - „ханами“, което означава любуване на цветовете. Естествено при такъв интерес към това дърво и цъфтежа му, в японските архиви има събрани данни за този процес от началото на 9 век досега. Данните са взети от [тук](http://atmenv.envi.osakafu-u.ac.jp/aono/kyophenotemp4/).
+
+```{r}
+library(rmarkdown)
+paged_table(cherries2)
+```
+
+
+
+```{r, layout="l-body-outset"}
+combined_cherries <- combined_cherries %>% layout(autosize = T)
+combined_cherries
+```
+
+
+Естествено няма как да не споменем недостатъците от това да разглеждаме двата набора от данни без теоретичен модел. Корелациите са нещо, което се среща често в природата, затова трябва винаги да внимаваме, когато разглеждаме данни без да използваме каузален модел за процеса, който ги генерира. (цитат?)
+
+Цъфтежа на черешите зависи от множество фактори и температурата е само един от тях. Други фактори, които най-вероятно също влияят върху това са количеството валежи, влажността, както и промяната във фенологията на дървесните видове.(цитат?)
+
+Колкото до покачващата се средна температура - възможно е част от нея да е в следствие от увеличаващата се популация на града Киото. Урбанизацията води до т.нар. ефект - "urban heat island", което е именно по-високи температури в големите градове в сравнение със заобикалящите ги околности, причинени от човешки активности и струпването на голямо население на едно място. (цитат?) Което пък от своя страна води до въпроса - в кои части на Киото са ставали измерванията на температурата?
+
+
+### Гроздобер в Бургундия
+Ако горните данни бяха събирани от по-голям регион и включваха разнообразни локации - градски части, равнини, планински части това щеше да ни даде една допълнителна сигурност в тренда, който виждаме. Затова ще разгледаме още един набор от данни, където този проблем отсъства, тъй като са събирани основно в извънградските части на Бургундия. Става дума за промяната в деня от годината, когато е събирана реколтата от грозде в региона от края на 14 век до 2006 година. 
+
+```{r, include=FALSE}
+grapes <- read.csv("/Users/ivo/Projects/ivaylo.xyz/data/cherries_grapes/france_grapes.csv")
+```
+
+```{r, include=FALSE}
+grapes <- grapes %>% select(Year, Bur)
+grapes_complete <- grapes[ complete.cases(grapes$Bur) , ] 
+grapes_complete$Bur <- as.integer(grapes_complete$Bur)
+grapes_complete$date <- ymd(20210831) + days(grapes_complete$Bur)
+grapes_complete <- grapes_complete %>%
+    mutate(DayMonth = format(as.Date(date), "%d %B"))
+```
+
+
+```{r, include=FALSE}
+grapes_graph <- ggplot(grapes_complete, aes(x=Year, y=Bur, label=DayMonth)) +
+  geom_point(color='#9037ad', alpha=0.4)+
+  geom_smooth(se = FALSE, color = "grey30", method="loess", span=0.2)+
+  geom_ribbon(stat = "smooth",fill= "grey30", alpha = .50,  method="loess", span=0.2)+
+  theme_minimal()+
+  theme(panel.grid.minor.x=element_blank(),
+        panel.grid.major.x=element_blank(),
+        axis.line.x = element_line(colour = 'black', size=0.5, linetype='solid'),
+        axis.title.y = element_text(size = 9, margin = margin(t = 0, r = 40, b = 0, l = 0)))+
+  scale_y_continuous(labels = function(x) format(as.Date(as.character(243+x), "%j"), "%d %b"))+
+  labs(x = "Година", y="Ден от годината, когато е събрана реколтата от грозде")
+```
+
+
+```{r, layout="l-body-outset"}
+ggplotly(grapes_graph, autosize = F, width = 800, height = 450, tooltip=c("DayMonth","Year"))
+```
+Както се вижда на графиката, тенденцията в брането на грозде прилича много на тенденцията, която разгледахме при японските череши - в последните 80 години гроздоберът се случва все по-рано. Ако приемем, че основната причина за това е покачващите се температури, то глобалното затопляне би следвало да е една от причините за това. 
+
+Повечето българи знаят, че зреенето на гроздето зависи от няколко очевидни фактора - климатични (температура, валежи, влажност) и промяна в земеделските методи. Също така обаче по-ранното узряване на гроздето (съответно по-ранното му бране) може да се обясни и с промяната на сортовете, които се отглеждат или промени в тяхната фенология. Следователно отново не можем
+
