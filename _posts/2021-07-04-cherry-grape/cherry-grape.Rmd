@@ -4,6 +4,7 @@ description: "Бърз преглед на един от два популярн
 author:
   - name: Ивайло Сакелариев
     url: {}
+base_url: https://ivaylo.xyz
 preview: static/cherry_grape.png
 date: 12-23-2021
 output:

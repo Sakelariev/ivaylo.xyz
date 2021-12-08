@@ -5,3 +5,4 @@ archive
 .Rhistory
 .Rprofile
 .RData
+.DS_Store
