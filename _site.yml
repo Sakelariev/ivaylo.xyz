@@ -11,11 +11,19 @@ collections:
     authors_metadata: false
     disqus: ivaylo.xyz
     share: [twitter, linkedin, facebook]
+  projects:
+    categories: false
+    categories_metadata: false
+    authors_metadata: false
+    disqus: ivaylo.xyz
+    share: [twitter, linkedin, facebook]
 output_dir: "."
 navbar:
   right:
     - text: "Начало"
       href: index.html
+    - text: "Проекти"
+      href: projects.html
     - text: "За мен"
       href: about.html
     - icon: fa fa-rss
