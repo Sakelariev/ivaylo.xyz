@@ -5,4 +5,7 @@ archive
 .Rhistory
 .Rprofile
 .RData
+.Rproj
 .DS_Store
+*.bib
+*.sh

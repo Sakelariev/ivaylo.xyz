@@ -1,7 +1,6 @@
 name: "ivaylo.xyz"
-title: "Ивайло Сакелариев | Ivaylo Sakelariev"
-description: |
-  Психология, Културна еволюция, Статистика, Data Science
+title: "Ивайло Сакелариев :: Ivaylo Sakelariev"
+description: " Личен блог за Психология, Културна еволюция, Статистика, Комуникация на науката"
 base_url: https://ivaylo.xyz
 google_analytics: "UA-117970418-1"
 collections:
