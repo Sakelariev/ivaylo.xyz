@@ -1,0 +1,17 @@
+---
+title: "Writing assistant"
+description: |
+  Малко приложение, което автоматизира някои граматически правила, които не са лесно достъпни на фонетичната клавиатура на Windows или пък са често пренебрегвани. 
+date: 2022-03-15
+base_url: https://ivaylo.xyz
+preview: images/writing-assistant.png
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+![](images/writing-assistant.png) 
+
+Приложението е направено на [Dash](https://plotly.com/dash/) и Python.
+
+➡️ [**Линк към приложението**](http://bg-quotes.ivaylo.xyz)

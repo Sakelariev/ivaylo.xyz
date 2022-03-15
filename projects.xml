@@ -6,7 +6,15 @@
     <atom:link href="https://ivaylo.xyz/projects.xml" rel="self" type="application/rss+xml"/>
     <description> Личен блог за Психология, Културна еволюция, Статистика, Комуникация на науката</description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 19 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Writing assistant</title>
+      <link>https://ivaylo.xyz/projects/2022-03-15-grammar-automate</link>
+      <description>Малко приложение, което автоматизира някои граматически правила, които не са лесно достъпни на фонетичната клавиатура на Windows или пък са често пренебрегвани.</description>
+      <guid>https://ivaylo.xyz/projects/2022-03-15-grammar-automate</guid>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://ivaylo.xyz/projects/2022-03-15-grammar-automate/images/writing-assistant.png" medium="image" type="image/png" width="2750" height="1412"/>
+    </item>
     <item>
       <title>Движение на хората в България по време на Covid-19</title>
       <link>https://ivaylo.xyz/projects/2021-12-19-movement-bulgaria</link>
