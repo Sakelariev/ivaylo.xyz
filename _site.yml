@@ -3,6 +3,7 @@ title: "Ивайло Сакелариев :: Ivaylo Sakelariev"
 description: " Личен блог за Психология, Културна еволюция, Статистика, Комуникация на науката"
 base_url: https://ivaylo.xyz
 google_analytics: "UA-117970418-1"
+theme: theme.css
 collections:
   posts:
     categories: false
