@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+<style>
+  div.csl-bib-body { }
+  div.csl-entry {
+    clear: both;
+    }
+  .hanging div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+  }
+  div.csl-left-margin {
+    min-width:2em;
+    float:left;
+  }
+  div.csl-right-inline {
+    margin-left:2em;
+    padding-left:1em;
+  }
+  div.csl-indent {
+    margin-left: 2em;
+  }
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Тестът Myers Briggs – “научният“ хороскоп</title>
+
+  <meta property="description" itemprop="description" content="Myers-Briggs тестът несъмнено е най-популярният тест за установяване на личностния тип. Дали обаче се справя със задачата да определи индивидуалните личностни характеристики и всъщност дали изобщо тези характеристики биха ни помогнали да прогнозираме бъдещо поведение?"/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-05-12"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-05-12"/>
+  <meta name="article:author" content="Ивайло Сакелариев"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Тестът Myers Briggs – “научният“ хороскоп"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Myers-Briggs тестът несъмнено е най-популярният тест за установяване на личностния тип. Дали обаче се справя със задачата да определи индивидуалните личностни характеристики и всъщност дали изобщо тези характеристики биха ни помогнали да прогнозираме бъдещо поведение?"/>
+  <meta property="og:image" content="https://ivaylo.xyz/images/intj.jpg"/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary_large_image"/>
+  <meta property="twitter:title" content="Тестът Myers Briggs – “научният“ хороскоп"/>
+  <meta property="twitter:description" content="Myers-Briggs тестът несъмнено е най-популярният тест за установяване на личностния тип. Дали обаче се справя със задачата да определи индивидуалните личностни характеристики и всъщност дали изобщо тези характеристики биха ни помогнали да прогнозираме бъдещо поведение?"/>
+  <meta property="twitter:image" content="https://ivaylo.xyz/images/intj.jpg"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=The weirdest people in the world?;citation_publication_date=2010;citation_volume=33;citation_doi=10.1017/S0140525X0999152X;citation_issn=0140-525X, 1469-1825;citation_author=Joseph Henrich;citation_author=Steven J Heine;citation_author=Ara Norenzayan"/>
+  <meta name="citation_reference" content="citation_title=The need to belong: Desire for interpersonal attachments as a fundamental human motivation;citation_publication_date=1995;citation_volume=117;citation_doi=10.1037/0033-2909.117.3.497;citation_issn=0033-2909;citation_author=R F Baumeister;citation_author=M R Leary"/>
+  <meta name="citation_reference" content="citation_title=The psychology of belonging;citation_publication_date=2020;citation_publisher=Routledge, Taylor &amp; Francis Group;citation_doi=10.4324/9780429327681;citation_author=Kelly-Ann Allen"/>
+  <meta name="citation_reference" content="citation_title=The logic of scientific discovery;citation_publication_date=1959;citation_publisher=Basic Books The logic of scientific discovery.;citation_volume=480;citation_author=Karl R Popper"/>
+  <meta name="citation_reference" content="citation_title=Towards a unified science of cultural evolution;citation_publication_date=2006;citation_volume=29;citation_doi=10.1017/S0140525X06009083;citation_issn=0140-525X;citation_author=Alex Mesoudi;citation_author=Andrew Whiten;citation_author=Kevin N Laland"/>
+  <meta name="citation_reference" content="citation_title=The WEIRDest people in the world : How the west became psychologically peculiar and particularly prosperous;citation_publication_date=2020;citation_author=Joseph Patrick;citation_author=The WEIRDest people in the world : How the west became psychologically peculiar and particularly prosperous"/>
+  <meta name="citation_reference" content="citation_title=How culture is driving human evolution, domesticating our species, and making us smarter;citation_publication_date=2016;citation_publisher=Princeton University Press;citation_doi=10.2307/j.ctvc77f0d;citation_author=Joseph Henrich"/>
+  <meta name="citation_reference" content="citation_title=The big five personality factors and personal values;citation_publication_date=2002;citation_publisher=SAGE Publications Inc;citation_volume=28;citation_doi=10.1177/0146167202289008;citation_issn=0146-1672;citation_author=Sonia Roccas;citation_author=Lilach Sagiv;citation_author=Shalom H Schwartz;citation_author=Ariel Knafo"/>
+  <meta name="citation_reference" content="citation_title=The guru effect;citation_publication_date=2010;citation_volume=1;citation_doi=10.1007/s13164-010-0025-0;citation_issn=1878-5158, 1878-5166;citation_author=Dan Sperber"/>
+  <meta name="citation_reference" content="citation_title=The cognitive foundations of cultural stability and diversity;citation_publication_date=2004;citation_volume=8;citation_doi=10.1016/j.tics.2003.11.002;citation_issn=1364-6613;citation_author=Dan Sperber;citation_author=Lawrence A Hirschfeld"/>
+  <meta name="citation_reference" content="citation_title=Emotional intelligence, cognitive intelligence, and job performance;citation_publication_date=2006;citation_publisher=SAGE Publications Inc;citation_volume=51;citation_doi=10.2189/asqu.51.1.1;citation_issn=0001-8392;citation_author=Stéphane Côté;citation_author=Christopher T H Miners"/>
+  <meta name="citation_reference" content="citation_title=Reasons to be fussy about cultural evolution;citation_publication_date=2016;citation_volume=31;citation_doi=10.1007/s10539-016-9516-4;citation_issn=0169-3867;citation_author=Olivier Morin"/>
+  <meta name="citation_reference" content="citation_title=Evaluating the validity of Myers-Briggs type indicator theory: A teaching tool and window into intuitive psychology;citation_publication_date=2019;citation_publisher=Wiley;citation_volume=13;citation_doi=10.1111/spc3.12434;citation_issn=1751-9004;citation_author=Randy Stein;citation_author=Alexander B Swan"/>
+  <meta name="citation_reference" content="citation_title=Culture and the evolutionary process;citation_publication_date=1985;citation_publisher=University of Chicago Press Culture; the evolutionary process.;citation_volume=331;citation_author=Robert Boyd;citation_author=Peter J Richerson"/>
+  <meta name="citation_reference" content="citation_title=Determinants of social desirability bias in sensitive surveys: A literature review;citation_publication_date=2013;citation_volume=47;citation_doi=10.1007/s11135-011-9640-9;citation_issn=0033-5177, 1573-7845;citation_author=Ivar Krumpal"/>
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","base_url","preview","citation","output","csl","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["Тестът Myers Briggs – “научният“ хороскоп"]},{"type":"character","attributes":{},"value":["Myers-Briggs тестът несъмнено е най-популярният тест за установяване на личностния тип. Дали обаче се справя със задачата да определи индивидуалните личностни характеристики и всъщност дали изобщо тези характеристики биха ни помогнали да прогнозираме бъдещо поведение?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ивайло Сакелариев"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2022-05-12"]},{"type":"character","attributes":{},"value":["https://ivaylo.xyz"]},{"type":"character","attributes":{},"value":["images/intj.jpg"]},{"type":"logical","attributes":{},"value":[false]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["apa.csl"]},{"type":"character","attributes":{},"value":["ivaylo.bib"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["2022-03-13-myers-briggs_files/anchor-4.2.2/anchor.min.js","2022-03-13-myers-briggs_files/bowser-1.9.3/bowser.min.js","2022-03-13-myers-briggs_files/crosstalk-1.2.0/css/crosstalk.min.css","2022-03-13-myers-briggs_files/crosstalk-1.2.0/js/crosstalk.js","2022-03-13-myers-briggs_files/crosstalk-1.2.0/js/crosstalk.js.map","2022-03-13-myers-briggs_files/crosstalk-1.2.0/js/crosstalk.min.js","2022-03-13-myers-briggs_files/crosstalk-1.2.0/js/crosstalk.min.js.map","2022-03-13-myers-briggs_files/crosstalk-1.2.0/scss/crosstalk.scss","2022-03-13-myers-briggs_files/distill-2.2.21/template.v2.js","2022-03-13-myers-briggs_files/header-attrs-2.14/header-attrs.js","2022-03-13-myers-briggs_files/htmlwidgets-1.5.4/htmlwidgets.js","2022-03-13-myers-briggs_files/jquery-3.6.0/jquery-3.6.0.js","2022-03-13-myers-briggs_files/jquery-3.6.0/jquery-3.6.0.min.js","2022-03-13-myers-briggs_files/jquery-3.6.0/jquery-3.6.0.min.map","2022-03-13-myers-briggs_files/plotly-binding-4.10.0/plotly.js","2022-03-13-myers-briggs_files/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css","2022-03-13-myers-briggs_files/plotly-main-2.5.1/plotly-latest.min.js","2022-03-13-myers-briggs_files/popper-2.6.0/popper.min.js","2022-03-13-myers-briggs_files/tippy-6.2.7/tippy-bundle.umd.min.js","2022-03-13-myers-briggs_files/tippy-6.2.7/tippy-light-border.css","2022-03-13-myers-briggs_files/tippy-6.2.7/tippy.css","2022-03-13-myers-briggs_files/tippy-6.2.7/tippy.umd.min.js","2022-03-13-myers-briggs_files/typedarray-0.1/typedarray.min.js","2022-03-13-myers-briggs_files/webcomponents-2.0.0/webcomponents.js","apa.csl","export.sh","images/garbage.jpg","images/google_trends.png","images/intj.jpg","images/Screenshot 2022-04-18 at 11.09.11.png","ivaylo.bib","multiTimeline.csv","paperpile.bib"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="2022-03-13-myers-briggs_files/header-attrs-2.14/header-attrs.js"></script>
+  <script src="2022-03-13-myers-briggs_files/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="2022-03-13-myers-briggs_files/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="2022-03-13-myers-briggs_files/typedarray-0.1/typedarray.min.js"></script>
+  <script src="2022-03-13-myers-briggs_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="2022-03-13-myers-briggs_files/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+  <script src="2022-03-13-myers-briggs_files/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+  <link href="2022-03-13-myers-briggs_files/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="2022-03-13-myers-briggs_files/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="2022-03-13-myers-briggs_files/popper-2.6.0/popper.min.js"></script>
+  <link href="2022-03-13-myers-briggs_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="2022-03-13-myers-briggs_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="2022-03-13-myers-briggs_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="2022-03-13-myers-briggs_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="2022-03-13-myers-briggs_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="2022-03-13-myers-briggs_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="2022-03-13-myers-briggs_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Тестът Myers Briggs – “научният“ хороскоп","description":"Myers-Briggs тестът несъмнено е най-популярният тест за установяване на личностния тип. Дали обаче се справя със задачата да определи индивидуалните личностни характеристики и всъщност дали изобщо тези характеристики биха ни помогнали да прогнозираме бъдещо поведение?","authors":[{"author":"Ивайло Сакелариев","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-05-12T00:00:00.000+03:00","citationText":"Сакелариев, 2022"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Тестът Myers Briggs – “научният“ хороскоп</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p>Myers-Briggs тестът несъмнено е най-популярният тест за установяване на личностния тип. Дали обаче се справя със задачата да определи индивидуалните личностни характеристики и всъщност дали изобщо тези характеристики биха ни помогнали да прогнозираме бъдещо поведение?</p>
+</div>
+
+<div class="d-byline">
+  Ивайло Сакелариев true 
+  
+<br/>2022-05-12
+</div>
+
+<div class="d-article">
+<h3 id="архитект-intj-a-intj-t">Архитект (<strong>INTJ-A / INTJ-T</strong>)</h3>
+<p><em>Самотно е на върха и, като един от най-редките типове с най-развити стратегически способности, Архитектът отлично знае това. Архитектите формират само два процента от населението, а жените от този тип са особено редки, като представляват само 0,8% от населението – често за тях е предизвикателство да намерят сходни личности, които могат да са в крак с тяхното неуморно интелектуално маневриране като в игра на шах. Хората с личностен тип Архитект притежават въображение и все пак са решителни; амбициозни, но прикрити; изумително любопитни, без да разпиляват енергията си.</em></p>
+<p><img src="images/intj.jpg" /></p>
+<p>Това беше първият ми сблъсък с Myers-Briggs теста преди около 13 години, когато с повечето ми съученици правехме различни тестове за кариерно ориентиране, а откъсът е описанието на моят “личностен тип” <a href="https://www.16personalities.com/bg/личностен-тип-intj"><strong>INTJ-A / INTJ-T или Архитект</strong></a><strong>.</strong> Няма да забравя колко специален и уникален се почувствах, когато прочетох, че принадлежа към една толкова рядка категория “изумително любопитни и амбициозни” хора. 😄</p>
+<p>Въпреки голямата си популярност, този тест категорично се проваля при прогнозирането на бъдещо поведение (poor validity) и често дава различни резултати за един и същи човек в рамките на няколко седмици (poor reliability). В този блог пост ще разгледам Myers-Briggs теста през призмата на няколко различни научни парадигми, за да се убедим как той всъщност е точно толкова точен в прогнозите си колкото астрологията.</p>
+<h3 id="myers-briggs-type-indicator"><strong>Myers-Briggs Type Indicator</strong></h3>
+<p>Myers-Briggs тестът несъмнено е най-популярният тест за установяване на личностния тип, който е базиран на теориите за личноста на Карл Юнг и в чиято основа са идеите, че всички хора имат вродени характерни черти, като интровертност или екстровертност, рационално или емоционално вземане на решения и други, които ги формират като “личности”.</p>
+<p><img src="images/google_trends.png" /></p>
+<p>Типологията е разработена от тандемът майка-дъщеря - Катарин Бригс и Изабел Бригс Майерс, нито една от които няма психологическо образование или какъвто и да е опит в създаването на <a href="https://bg.wikipedia.org/wiki/Психометрия" title="https://bg.wikipedia.org/wiki/Психометрия">психометрични</a> методи.</p>
+<p>Резултатът за жалост е инструмент, който не е базиран на научен модел и не е валидиран въпреки безбройните опити за това, които продължават и до днес <span class="citation" data-cites="Stein2019-bs">(<a href="#ref-Stein2019-bs" role="doc-biblioref">Stein &amp; Swan, 2019</a>)</span>. С други думи резултатите от теста не могат да бъдат използвани за прогнозирането на бъдещо поведение или резултати като например успешно справяне с работните задачи, ангажираност с работния процес, оценки на изпити . Причините за това са много - някои са свързани със самия тест, а други са просто общи недостатъци на психометричните инструменти за тестване на личностните типове и дупки в теориите на личностната психология като цяло.</p>
+<h3 id="теоретична-основа">Теоретична основа</h3>
+<p><a href="https://bg.wikipedia.org/wiki/Карл_Густав_Юнг">Карл Густав Юнг</a> със сигурност е едно от най-популярните имена в психологията дори и днес. (В България е изключително високо ценен в някои кръгове, най-вече от определени психотерапевтични школи). Юнг има изключително широк спектър от интереси и в творчеството си комбинира познания от митологията, религията, антропологията, изкуството. За съжаление обаче теориите му (както и тези на неговият приятел, колега и ментор Зигмунд Фройд) са създадени доста преди модерните научни разбирания за <a href="https://bg.wikipedia.org/wiki/Фалсифицируемост">фалсифицируемост</a> и емпирична верификация<span class="citation" data-cites="Popper1959-me">(<a href="#ref-Popper1959-me" role="doc-biblioref">Popper, 1959</a>)</span>, и следователно не отговарят на съвременните представи за научна теория в социалните или поведенчески науки. Идеите на Юнг са базирани основно на аргументация и на субективни наблюдения, а самият той е смятал, че ненаучният характер на идеите му е предимство, а не недостатък. <span class="citation" data-cites="Stein2019-bs">(<a href="#ref-Stein2019-bs" role="doc-biblioref">Stein &amp; Swan, 2019</a>)</span></p>
+<p>Популярността му навярно се дължи на феномен наречен “гуру ефекта”, предложен за първи път от Dan Sperber или склонноста на хората да вярват, че неясно звучащи твърдения идващи от авторитетни фигури носят някаква дълбока мъдрост и истина<span class="citation" data-cites="Sperber2010-bo">(<a href="#ref-Sperber2010-bo" role="doc-biblioref">Sperber, 2010</a>)</span>. Този феномен може да обясни популярността на фигури като Фройд, Юнг или Жак Лакан.</p>
+<p><img src="images/Screenshot%202022-04-18%20at%2011.09.11.png" /></p>
+<p>Излиза, че тестът Myers-Briggs се проваля още в теоретична си основа, което според някои е достатъчна причина да го критикуваме и да подлагаме на съмнение резултатите от него. Нека обаче да разгледаме още няколко теоретични и практически проблема.</p>
+<h3 id="интроверт-или-екстроверт"><strong>Интроверт или екстроверт</strong></h3>
+<p>Първият сериозен проблем на MBTI е използването на дихотомично разделение при всички типологии (<strong>Сетивност или Интуиция , и т.н.</strong>), вместо използването на непрекъсната последователност. Дихотомично буквално означава разделение по двойки, например - мъжки и женски. Нека да се концентрираме за момента върху скалата <strong>Екстровертност - Интровертност</strong>. Разделянето на интроверти и екстроверти обаче е като да разделиш хората на ниски и високи, т.е. създателите на теста се опитват да ограничат екстровертността и интровертността до просто две категории.</p>
+<p>От бърз преглед на литературата виждаме, че повечето хора са по средата, което означава, че разделяме на две категории индивиди, които са всъщност доста близко едни до други. Това е като да кажем всички хора които са по-високи от 178 см са високи, а под 178 см са ниски и да имаме един човек висок 177 см, който да попадне в категорията на ниските, а след това друг с ръст 179 см, когото да категоризираме като висок, макар разликата между двамата да е едва 2 см. Да вземем накрая и един индивид с височина 210 см - в дихотомичното ни разделение той ще се смята като висок естествено, което ще го сложи в една категория с индивида висок 179 см, въпреки разликата от 31 см (графика 1). Това е и проблемът в дихотомичната класификацията, която използва Myers-Briggs.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-296db18851b93ad41c8a" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-296db18851b93ad41c8a">{"x":{"visdat":{"65e57ea010d6":["function () ","plotlyVisDat"]},"cur_data":"65e57ea010d6","attrs":{"65e57ea010d6":{"x":{},"y":{},"marker":{"color":"rgb(204,204,204)"},"name":"Височина","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"65e57ea010d6.1":{"x":["Йордан","Георги"],"y":[210,210],"marker":{"color":"rgb(204,204,204)"},"name":"Височина","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","text":["Ниски","Високи"],"mode":"text","showlegend":false,"hoverinfo":"none","inherit":true}},"layout":{"margin":{"b":100,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Графика 1","tickangle":-45,"tickvals":["Йордан","Георги","Кирил"],"categoryorder":"array","categoryarray":[152,167,169,170,176,178,179,184,184,185,186,210]},"shapes":[{"type":"line","y0":0,"y1":20,"yref":"paper","x0":16.5,"x1":16.5,"line":{"color":"black","dash":"dot"}},{"type":"rect","fillcolor":"red","line":{"color":"red"},"opacity":0.2,"y0":0,"y1":215,"x0":10.5,"x1":16.5},{"type":"rect","fillcolor":"blue","text":"Високи","line":{"color":"blue"},"opacity":0.2,"y0":0,"y1":215,"x0":16.5,"x1":22.5}],"yaxis":{"domain":[0,1],"automargin":true,"title":"Височина в см"},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["Иван","Борислав","Николай","Светослав","Делян","Йордан","Георги","Петър","Васил","Веселин","Чавдар","Кирил"],"y":[152,167,169,170,176,178,179,184,184,185,186,210],"marker":{"color":"rgb(204,204,204)","line":{"color":"rgba(31,119,180,1)"}},"name":"Височина","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Йордан","Георги"],"y":[210,210],"marker":{"color":"rgb(204,204,204)","line":{"color":"rgba(255,127,14,1)"}},"name":"Височина","type":"scatter","text":["Ниски","Високи"],"mode":"text+markers","showlegend":false,"hoverinfo":["none","none"],"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>Друг сериозен проблем е социалната динамика - настроението и стила на комуникация на хората се променя и никой не е екстровертен (или интровертен) във всеки един момент от живота си. Дори на екстровертите им се случва да са тъжни и да предпочетат да останат вкъщи, вместо да отидат на поредното парти.</p>
+<p>Единствената класификация, която има теоретична основа в тази типология, всъщност е разглежданата до момента, а именно по линията интроверт - екстроверт. Останалите класификации - <strong>Сетивност или Интуиция</strong>, <strong>Мислене или Чувстване</strong>, <strong>Съждение или Възприятие</strong> - нямат никаква теоретична основа и не присъстват никъде в научната литература. А в случая на <strong>Мислене или Чувстване</strong>, които са противоположности в Myers-Briggs, дори има изследвания, които намират корелация между двете, а именно, че хората с по-добри способности да разсъждават и да се обосновават също така показват по-добри умения за разпознаване и контролиране на емоциите. <span class="citation" data-cites="Cote2006-jt">(<a href="#ref-Cote2006-jt" role="doc-biblioref">Côté &amp; Miners, 2006</a>)</span></p>
+<p>От всичко личи, че Myers-Briggs има сериозни проблеми на теоретично ниво. Защо обаче е толкова успешен, въпреки липсата на емпирични доказателства?</p>
+<h3 id="garbage-in---garbage-out">Garbage in - Garbage out</h3>
+<p>Статистическите модели (или процедури при някои парадигми на статистиката) се нуждаят първо от качествен теоретичен модел и после от качествени данни, за да могат да дават надеждни прогнози. (или както гласи популярен в програмирането израз : Garbage in - Garbage out)</p>
+<p><img src="images/garbage.jpg" /></p>
+<p>За съжаление при Myers-Briggs теста липсва достатъчно качествена информация, която да подадем към един статистически модел,а на изхода (или резултата) получаваме гигантска информация , също като при хороскоп. В случая получаваме категория, от която се очаква да обяснява и прогнозира поведението на всички хора, които попадат в нея. Човешкото поведение е изключително сложен научен феномен, който зависи от множество фактори и те често си взаимодействат помежду си - културни, социални, биологически, икономически.</p>
+<p>Не е реалистично да очакваме резултатите от един тест с десетина въпроса да ни дадат толкова богата картина за един индивид, която да е достатъчна, за да прогнозираме поведението му в различни ситуации, житейски стадий, или професионалният успех на дадена позиция. Подобни изследвания в психологията на личността има много и един от моделите с най-сериозно присъствие в психологическата литература е Петфакторния модел за личностните черти, известен като още Big 5<span class="citation" data-cites="Roccas2002-ub">(<a href="#ref-Roccas2002-ub" role="doc-biblioref">Roccas et al., 2002</a>)</span>. Той обаче разчита на много богат теоретичен модел в комбинация с грижливо подбрани данни. В него изследователите събират много допълнителни данни, като например демографски, социо-икономически или експериментални, с които са валидирали модела в различни контексти.</p>
+<h4 id="аз-отдавам-това-на-две-основни-причини"><strong>Аз отдавам това на две основни причини:</strong></h4>
+<ol type="1">
+<li><p>Всички типове в типологията са положителни по един или друг начин. В Myers-Briggs няма място за психопати, загубеняци или мързели. Затова тестът кара хората да се чувстват добре, типовете са забавни и предоставят тема за разговор (т.е. могат да стимулират социализиране), което ги прави културно атрактивни. От културната еволюция знаем, че информация с подобни свойства обикновено има потенциала да се разпространява лесно и успешно <span class="citation" data-cites="Morin2016-uh Sperber2004-ns">(<a href="#ref-Morin2016-uh" role="doc-biblioref">Morin, 2016</a>; <a href="#ref-Sperber2004-ns" role="doc-biblioref">Sperber &amp; Hirschfeld, 2004</a>)</span>. Освен това личностните типове са много общи и неясно формулирани с цел да прилягат на възможно най-голям кръг хора, което от своя страна подсилва културната атрактивност допълнително. Този феномен е известен още като <a href="https://bg.wikipedia.org/wiki/Ефект_на_Форер" title="https://bg.wikipedia.org/wiki/Ефект_на_Форер"><strong>Ефектът на Форер</strong></a> и се счита като един факторите, които водят до популярността на астрологията.</p></li>
+<li><p>Попадането в определен личностен тип, дава на индивида групова принадлежност, а от социалната психология знаем, че хората имаме еволюционна нужда да принадлежим на групи сходни на нас човешки същества. <span class="citation" data-cites="Baumeister1995-vg Allen2020-ho">(<a href="#ref-Allen2020-ho" role="doc-biblioref">Allen, 2020</a>; <a href="#ref-Baumeister1995-vg" role="doc-biblioref">Baumeister &amp; Leary, 1995</a>)</span></p></li>
+</ol>
+<h3 id="какво-прави-тестовете-за-определяне-на-личностния-тип-ненадежден-метод-за-прогнозирането-на-човешко-поведение">Какво прави <strong>тестовете за определяне на личностния тип ненадежден метод за прогнозирането на човешко поведение</strong></h3>
+<p>Дотук разглеждахме проблемите конкретно на Myers-Briggs индикаторът. За съжаление обаче не само този инструмент има проблеми с надеждността, всъщност повечето тестове за определяне на личностен тип всъщност нямат добра прогнозна способност (predictive power). Проблемите на тези тестове са основно методологически и ще разгледам само двете най-големи според мен :</p>
+<ul>
+<li><p>разчита на самоотчети (self-report данни)</p></li>
+<li><p>базиран на WEIRD популация</p></li>
+</ul>
+<h3 id="самоотчетите"><strong>Самоотчетите</strong></h3>
+<p>Друг сериозен недостатък е разчитането на т.нар. self-report данни (самоотчети). Използването на самоотчети в психологията се налага като водещ тренд в последните 50 години. Предимствата им особено в ерата на Интернет са много - лесни и евтини са за подготвяне и разпостранение, могат да дадат отговори за убеждения, мисли и емоции, както и други интроспективни характеристики на индивида, за което все още няма алтернативен метод. Имат обаче и своите сериозни недостатъци и в България много често наблюдаваме това по време на избори, когато почти винаги има сериозни разминавания между “проучванията” на социологическите агенции непосредствено преди изборите (разчитащи основно на самоотчети) и крайните резултати. Ето само някои от тях :</p>
+<ul>
+<li><p>много хора не отговарят честно на анкетите, особено ако според тях отговорът не е социално приемлив <span class="citation" data-cites="Krumpal2013-xk">(<a href="#ref-Krumpal2013-xk" role="doc-biblioref">Krumpal, 2013</a>)</span></p></li>
+<li><p>голяма част от хората не са способни да се оценят точно или обективно, защото в повечето случаи мотивациите, предпочитанията и убежденията на индивидите са продукт на сложни културни и социални процеси, които са автоматични и несъзнателни (следователно невидими за тях) и е невъзможно да бъдат обяснени чрез интроспективни размишления <span class="citation" data-cites="Henrich2016-mm">(<a href="#ref-Henrich2016-mm" role="doc-biblioref">Henrich, 2016, p. 210</a>)</span>.</p></li>
+<li><p>хората, които се съгласяват да попълнят дадена анкета или да бъдат инервюирани не винаги са представителни за популацията, която се изследва (например опитайте се да хванете някой от твърдия електорат на “Възраждане” да попълни анкета за политиките за културен обмен на ЕС 😀 ). С други думи базирайки изследването си на доброволна извадка, или участници, които са се съгласили да отговорят на нашите въпроси, ние добавяме в резултатите си bias (<em>пристрастие</em>) към тази извадка. В икономическата литература това се нарича endogenous selection, а в каузалният анализ феноменът, който произлиза от това се казва collider bias.</p></li>
+</ul>
+<h3 id="базирани-на-weird-популация"><strong>Базирани на WEIRD популация</strong></h3>
+<p>През последните две деситилетия психологията претърпява сериозна методологическа революция, породена от множеството провалили се репликации на експерименти (т.нар. „<a href="https://en.wikipedia.org/wiki/Replication_crisis">replication crisis</a>“). Едно от основните течения в тази революция произлиза от зародилата се през 80-те години интердисциплинарна теория на културната еволюция<span class="citation" data-cites="Boyd1985-fs">(<a href="#ref-Boyd1985-fs" role="doc-biblioref">Boyd &amp; Richerson, 1985</a>)</span>. Изследванията в областта на културната еволюция се характеризитат с изучаването на това как културните особености (например убеждения и модели на поведение) се стабилизират, променят и разпространяват в популациите. <span class="citation" data-cites="Mesoudi2006-wh">(<a href="#ref-Mesoudi2006-wh" role="doc-biblioref">Mesoudi et al., 2006</a>)</span></p>
+<p>През 2010 година Джоузеф Хенрич и колегите му публикуват много влиятелна статия <span class="citation" data-cites="Henrich2010-bi">(<a href="#ref-Henrich2010-bi" role="doc-biblioref">Henrich et al., 2010</a>)</span>, която разкрива, че всъщност за по-голямата част от изследванията в областта на психологията и поведенческите науки са използвани участници от популации, за които се оказва, че са сред най-малко представителните, които да бъдат използвани за основа върху която да генерализираме човешкото поведение. Те наричат тази група общества Western, Educated, Industrialized, Rich, and Democratic (WEIRD), и в нея влизат основно държави като САЩ, Канада, държавите от Западна и Северна Европа, Австралия.</p>
+<p>И така повечето психолози смятат, че моделите и измеренията на личността, наблюдавани сред американците и други хора от западни общества, до голяма степен представляват общочовешкия модел на поведение <span class="citation" data-cites="Henrich2020-pl">(<a href="#ref-Henrich2020-pl" role="doc-biblioref">Henrich &amp; Patrick, 2020</a>)</span>. Това е изцяло WEIRD предубеждение, което не важи в по-голямата част от останалия свят, въпреки че заради огромното влияние на западните държави над глобалната култура, вече навярно може да се наблюдава в други култури. Вместо това ако приемем за верен еволюционния модел за човешкото поведение, то индивидите биха адаптирали техните личностни характеристики към стабилните и престижни групи на социалната, икономическата и екологичната среда, с които се сблъскват през живота си. Например в дадена търговско-ориентирана култура престижните индивиди биха имали екстровертен характер, който да им помага при сключването на сделки и убеждаването на клиенти. Тогава повечето индивиди биха се адаптирали и биха имали екстровертни качества, защото в съответната култура тези качества биха имали еволюционно предимство. В контраст с това пък в едно общество от ловци събирачи, най-престижните индивиди са най-добрите ловци, които биха били по-интровертно ориентирани, заради нуждата да пазят тайните от занаята си, които ги правят толкова важни за обществото. В този случай повечето индивиди биха показвали по-сдържаният, мълчалив и отдръпнат характер, който наричаме интровертност.</p>
+<p>С други думи личностните наклонности в културно-еволюционния модел имат динамичен характер, който е определен изцяло от средата, а не фиксираният (вроден) характер - основната идея, на която е базирана личностната психология (както и Myers-Briggs).</p>
+<h3 id="обобщение">Обобщение</h3>
+<p>Въпреки многото проблеми на Myers-Briggs, в литература за личностната психология все пак има някои утвърдили се личностни типологии, които продължават да се използват и днес. Аз не съм експерт в тази област (минах през един курс в магистратурата си), не съм правил сериозен преглед на литературата по тази тема и затова не претендирам, че критиката ми към личностната психология е изчрепателна. Напълно възможно е да има някакво развитие в последните години и някои изследователи да са успели да намерят начин да валидират измеренията на някои личностни модели в повече култури и държави. Но повечето психолози, които работят в сферата на личностната психология са единодушни, че тестът на Myers-Briggs няма причина да продължава да бъде използван в бизнеса или в образованието.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
+<div id="ref-Allen2020-ho" class="csl-entry" role="doc-biblioentry">
+Allen, K.-A. (2020). <em>The psychology of belonging</em>. Routledge, Taylor &amp; Francis Group. <a href="https://doi.org/10.4324/9780429327681">https://doi.org/10.4324/9780429327681</a>
+</div>
+<div id="ref-Baumeister1995-vg" class="csl-entry" role="doc-biblioentry">
+Baumeister, R. F., &amp; Leary, M. R. (1995). The need to belong: Desire for interpersonal attachments as a fundamental human motivation. <em>Psychological Bulletin</em>, <em>117</em>(3), 497–529. <a href="https://doi.org/10.1037/0033-2909.117.3.497">https://doi.org/10.1037/0033-2909.117.3.497</a>
+</div>
+<div id="ref-Boyd1985-fs" class="csl-entry" role="doc-biblioentry">
+Boyd, R., &amp; Richerson, P. J. (1985). <em>Culture and the evolutionary process</em>. <em>331</em>. <a href="https://psycnet.apa.org/fulltext/1985-97763-000.pdf">https://psycnet.apa.org/fulltext/1985-97763-000.pdf</a>
+</div>
+<div id="ref-Cote2006-jt" class="csl-entry" role="doc-biblioentry">
+Côté, S., &amp; Miners, C. T. H. (2006). Emotional intelligence, cognitive intelligence, and job performance. <em>Administrative Science Quarterly</em>, <em>51</em>(1), 1–28. <a href="https://doi.org/10.2189/asqu.51.1.1">https://doi.org/10.2189/asqu.51.1.1</a>
+</div>
+<div id="ref-Henrich2016-mm" class="csl-entry" role="doc-biblioentry">
+Henrich, J. (2016). <em>How culture is driving human evolution, domesticating our species, and making us smarter</em>. Princeton University Press. <a href="https://doi.org/10.2307/j.ctvc77f0d">https://doi.org/10.2307/j.ctvc77f0d</a>
+</div>
+<div id="ref-Henrich2010-bi" class="csl-entry" role="doc-biblioentry">
+Henrich, J., Heine, S. J., &amp; Norenzayan, A. (2010). The weirdest people in the world? <em>The Behavioral and Brain Sciences</em>, <em>33</em>(2-3), 61-83; discussion 83-135. <a href="https://doi.org/10.1017/S0140525X0999152X">https://doi.org/10.1017/S0140525X0999152X</a>
+</div>
+<div id="ref-Henrich2020-pl" class="csl-entry" role="doc-biblioentry">
+Henrich, &amp; Patrick, J. (2020). <em>The <span>WEIRDest</span> people in the world : How the west became psychologically peculiar and particularly prosperous</em>. <a href="https://www.worldcat.org/title/weirdest-people-in-the-world-how-the-west-became-psychologically-peculiar-and-particularly-prosperous/oclc/1145924881&amp;referer=library_profile&amp;returnRegistryId=3128">https://www.worldcat.org/title/weirdest-people-in-the-world-how-the-west-became-psychologically-peculiar-and-particularly-prosperous/oclc/1145924881&amp;referer=library_profile&amp;returnRegistryId=3128</a>
+</div>
+<div id="ref-Krumpal2013-xk" class="csl-entry" role="doc-biblioentry">
+Krumpal, I. (2013). Determinants of social desirability bias in sensitive surveys: A literature review. <em>Quality &amp; Quantity</em>, <em>47</em>(4), 2025–2047. <a href="https://doi.org/10.1007/s11135-011-9640-9">https://doi.org/10.1007/s11135-011-9640-9</a>
+</div>
+<div id="ref-Mesoudi2006-wh" class="csl-entry" role="doc-biblioentry">
+Mesoudi, A., Whiten, A., &amp; Laland, K. N. (2006). Towards a unified science of cultural evolution. <em>The Behavioral and Brain Sciences</em>, <em>29</em>(4), 329-47; discussion 347-83. <a href="https://doi.org/10.1017/S0140525X06009083">https://doi.org/10.1017/S0140525X06009083</a>
+</div>
+<div id="ref-Morin2016-uh" class="csl-entry" role="doc-biblioentry">
+Morin, O. (2016). Reasons to be fussy about cultural evolution. <em>Biology &amp; Philosophy</em>, <em>31</em>, 447–458. <a href="https://doi.org/10.1007/s10539-016-9516-4">https://doi.org/10.1007/s10539-016-9516-4</a>
+</div>
+<div id="ref-Popper1959-me" class="csl-entry" role="doc-biblioentry">
+Popper, K. R. (1959). <em>The logic of scientific discovery</em>. <em>480</em>. <a href="https://psycnet.apa.org/fulltext/1961-02882-000.pdf">https://psycnet.apa.org/fulltext/1961-02882-000.pdf</a>
+</div>
+<div id="ref-Roccas2002-ub" class="csl-entry" role="doc-biblioentry">
+Roccas, S., Sagiv, L., Schwartz, S. H., &amp; Knafo, A. (2002). The big five personality factors and personal values. <em>Personality &amp; Social Psychology Bulletin</em>, <em>28</em>(6), 789–801. <a href="https://doi.org/10.1177/0146167202289008">https://doi.org/10.1177/0146167202289008</a>
+</div>
+<div id="ref-Sperber2010-bo" class="csl-entry" role="doc-biblioentry">
+Sperber, D. (2010). The guru effect. <em>Review of Philosophy and Psychology</em>, <em>1</em>(4), 583–592. <a href="https://doi.org/10.1007/s13164-010-0025-0">https://doi.org/10.1007/s13164-010-0025-0</a>
+</div>
+<div id="ref-Sperber2004-ns" class="csl-entry" role="doc-biblioentry">
+Sperber, D., &amp; Hirschfeld, L. A. (2004). The cognitive foundations of cultural stability and diversity. <em>Trends in Cognitive Sciences</em>, <em>8</em>(1), 40–46. <a href="https://doi.org/10.1016/j.tics.2003.11.002">https://doi.org/10.1016/j.tics.2003.11.002</a>
+</div>
+<div id="ref-Stein2019-bs" class="csl-entry" role="doc-biblioentry">
+Stein, R., &amp; Swan, A. B. (2019). Evaluating the validity of <span>Myers-Briggs</span> type indicator theory: A teaching tool and window into intuitive psychology. <em>Social and Personality Psychology Compass</em>, <em>13</em>(2), e12434. <a href="https://doi.org/10.1111/spc3.12434">https://doi.org/10.1111/spc3.12434</a>
+</div>
+</div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom">
+<h3 id="references">References</h3>
+<div id="references-listing"></div>
+</div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
