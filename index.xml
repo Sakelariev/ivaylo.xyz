@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
-    <title>Ивайло Сакелариев :: Ivaylo Sakelariev</title>
+    <title>Ивайло Сакелариев (🇬🇧 Ivaylo Sakelariev )</title>
     <link>https://ivaylo.xyz</link>
     <atom:link href="https://ivaylo.xyz/index.xml" rel="self" type="application/rss+xml"/>
     <description> Личен блог за Психология, Културна еволюция, Статистика, Комуникация на науката</description>
+    <image>
+      <title>Ивайло Сакелариев (🇬🇧 Ivaylo Sakelariev )</title>
+      <url>https://ivaylo.xyz/static/favicon.ico</url>
+      <link>https://ivaylo.xyz</link>
+    </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 12 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 May 2022 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Тестът Myers Briggs – “научният“ хороскоп</title>
+      <title>Тестът Myers Briggs – „научният“ хороскоп</title>
       <dc:creator>Ивайло Сакелариев</dc:creator>
       <link>https://ivaylo.xyz/posts/2022-03-13-myers-briggs</link>
       <description>Myers-Briggs тестът несъмнено е най-популярният тест за установяване на личностния тип. Дали обаче се справя със задачата да определи индивидуалните личностни характеристики и всъщност дали изобщо тези характеристики биха ни помогнали да прогнозираме бъдещо поведение?</description>
       <guid>https://ivaylo.xyz/posts/2022-03-13-myers-briggs</guid>
-      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
       <media:content url="https://ivaylo.xyz/posts/2022-03-13-myers-briggs/images/intj.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
