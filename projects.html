@@ -89,23 +89,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Ивайло Сакелариев (🇬🇧 Ivaylo Sakelariev ): Проекти</title>
+  <title>Ивайло Сакелариев: Проекти</title>
 
   <meta property="description" itemprop="description" content=""/>
 
-  <link rel="icon" type="image/vnd.microsoft.icon" href="static/favicon.ico"/>
+  <link rel="icon" type="image/png" href="static/scatter-plot.png"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Ивайло Сакелариев (🇬🇧 Ivaylo Sakelariev ): Проекти"/>
+  <meta property="og:title" content="Ивайло Сакелариев: Проекти"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content=""/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Ивайло Сакелариев (🇬🇧 Ivaylo Sakelariev )"/>
+  <meta property="og:site_name" content="Ивайло Сакелариев"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Ивайло Сакелариев (🇬🇧 Ivaylo Sakelariev ): Проекти"/>
+  <meta property="twitter:title" content="Ивайло Сакелариев: Проекти"/>
   <meta property="twitter:description" content=""/>
 
   <!--/radix_placeholder_meta_tags-->
@@ -1903,6 +1903,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   /* Optional: embed custom fonts here with `@import`          */
   /* This must remain at the top of this file.                 */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab');
   @import url('https://fonts.googleapis.com/css2?family=Roboto');
 
 
@@ -1921,10 +1922,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --aside-color:     rgba(0, 0, 0, 0.6);
     --fig-cap-color:   rgba(0, 0, 0, 0.6);
     /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    "Roboto", serif;
+    --heading-font:    "Roboto Slab", serif;
     --mono-font:       monospace;
     --body-font:       "Roboto", serif;
-    --navbar-font:     "Roboto", serif;  /* websites + blogs only */
+    --navbar-font:     "Roboto Slab", serif;  /* websites + blogs only */
   }
 
   /*-- ARTICLE METADATA --*/
@@ -1954,10 +1955,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .distill-site-header {
     --title-size:       18px;
-    --text-color:       #ffffff;                     /* edited */
-    --text-size:        15px;
-    --hover-color:      #ffb300;                 /* edited */
-    --bkgd-color:       #24292e;                     /* edited */
+    --text-color:       #000;                     /* edited */
+    --text-size:        18px;
+    --font-weight:      500;
+    --hover-color:      #ff8f00;                 /* edited */
+    --bkgd-color:       #fff;                     /* edited */
   }
 
   .distill-site-footer {
@@ -1969,6 +1971,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   /*-- Additional custom styles --*/
   /* Add any additional CSS rules below                      */
+
 
 
 
@@ -2165,9 +2168,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
 <a class="logo">
-<img src="static/glitch.png" alt="Logo"/>
+<img src="static/scatter-plot.png" alt="Logo"/>
 </a>
-<a href="index.html" class="title">Ивайло Сакелариев (🇬🇧 Ivaylo Sakelariev )</a>
+<a href="index.html" class="title">Ивайло Сакелариев</a>
 </div>
 <div class="nav-right">
 <a href="index.html">Начало</a>
@@ -2361,7 +2364,8 @@ function init_posts_list() {
 
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

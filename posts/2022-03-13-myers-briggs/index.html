@@ -109,12 +109,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-<title>Ивайло Сакелариев (🇬🇧 Ivaylo Sakelariev ): Тестът Myers Briggs – „научният“ хороскоп</title>
+<title>Ивайло Сакелариев: Тестът Myers Briggs – „научният“ хороскоп</title>
 
 <meta property="description" itemprop="description" content="Myers-Briggs тестът несъмнено е най-популярният тест за установяване на личностния тип. Дали обаче се справя със задачата да определи индивидуалните личностни характеристики и всъщност дали изобщо тези характеристики биха ни помогнали да прогнозираме бъдещо поведение?"/>
 
 <link rel="canonical" href="https://ivaylo.xyz/posts/2022-03-13-myers-briggs/"/>
-<link rel="icon" type="image/vnd.microsoft.icon" href="../../static/favicon.ico"/>
+<link rel="icon" type="image/png" href="../../static/scatter-plot.png"/>
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2022-05-25"/>
@@ -122,17 +122,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta name="article:author" content="Ивайло Сакелариев"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Ивайло Сакелариев (🇬🇧 Ivaylo Sakelariev ): Тестът Myers Briggs – „научният“ хороскоп"/>
+<meta property="og:title" content="Ивайло Сакелариев: Тестът Myers Briggs – „научният“ хороскоп"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="Myers-Briggs тестът несъмнено е най-популярният тест за установяване на личностния тип. Дали обаче се справя със задачата да определи индивидуалните личностни характеристики и всъщност дали изобщо тези характеристики биха ни помогнали да прогнозираме бъдещо поведение?"/>
 <meta property="og:url" content="https://ivaylo.xyz/posts/2022-03-13-myers-briggs/"/>
 <meta property="og:image" content="https://ivaylo.xyz/posts/2022-03-13-myers-briggs/images/intj.jpg"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:site_name" content="Ивайло Сакелариев (🇬🇧 Ivaylo Sakelariev )"/>
+<meta property="og:site_name" content="Ивайло Сакелариев"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary_large_image"/>
-<meta property="twitter:title" content="Ивайло Сакелариев (🇬🇧 Ivaylo Sakelariev ): Тестът Myers Briggs – „научният“ хороскоп"/>
+<meta property="twitter:title" content="Ивайло Сакелариев: Тестът Myers Briggs – „научният“ хороскоп"/>
 <meta property="twitter:description" content="Myers-Briggs тестът несъмнено е най-популярният тест за установяване на личностния тип. Дали обаче се справя със задачата да определи индивидуалните личностни характеристики и всъщност дали изобщо тези характеристики биха ни помогнали да прогнозираме бъдещо поведение?"/>
 <meta property="twitter:url" content="https://ivaylo.xyz/posts/2022-03-13-myers-briggs/"/>
 <meta property="twitter:image" content="https://ivaylo.xyz/posts/2022-03-13-myers-briggs/images/intj.jpg"/>
@@ -1952,6 +1952,7 @@ d-appendix {
 
 /* Optional: embed custom fonts here with `@import`          */
 /* This must remain at the top of this file.                 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab');
 @import url('https://fonts.googleapis.com/css2?family=Roboto');
 
 
@@ -1970,10 +1971,10 @@ html {
   --aside-color:     rgba(0, 0, 0, 0.6);
   --fig-cap-color:   rgba(0, 0, 0, 0.6);
   /*-- Specify custom fonts ~~~ must be imported above   --*/
-  --heading-font:    "Roboto", serif;
+  --heading-font:    "Roboto Slab", serif;
   --mono-font:       monospace;
   --body-font:       "Roboto", serif;
-  --navbar-font:     "Roboto", serif;  /* websites + blogs only */
+  --navbar-font:     "Roboto Slab", serif;  /* websites + blogs only */
 }
 
 /*-- ARTICLE METADATA --*/
@@ -2003,10 +2004,11 @@ d-appendix {
 
 .distill-site-header {
   --title-size:       18px;
-  --text-color:       #ffffff;                     /* edited */
-  --text-size:        15px;
-  --hover-color:      #ffb300;                 /* edited */
-  --bkgd-color:       #24292e;                     /* edited */
+  --text-color:       #000;                     /* edited */
+  --text-size:        18px;
+  --font-weight:      500;
+  --hover-color:      #ff8f00;                 /* edited */
+  --bkgd-color:       #fff;                     /* edited */
 }
 
 .distill-site-footer {
@@ -2018,6 +2020,7 @@ d-appendix {
 
 /*-- Additional custom styles --*/
 /* Add any additional CSS rules below                      */
+
 
 
 
@@ -2222,9 +2225,9 @@ gtag('config', 'UA-117970418-1');
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
 <a class="logo">
-<img src="../../static/glitch.png" alt="Logo"/>
+<img src="../../static/scatter-plot.png" alt="Logo"/>
 </a>
-<a href="../../index.html" class="title">Ивайло Сакелариев (🇬🇧 Ivaylo Sakelariev )</a>
+<a href="../../index.html" class="title">Ивайло Сакелариев</a>
 </div>
 <div class="nav-right">
 <a href="../../index.html">Начало</a>

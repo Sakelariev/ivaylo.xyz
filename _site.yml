@@ -1,10 +1,10 @@
 name: "ivaylo.xyz"
-title: "Ивайло Сакелариев (🇬🇧 Ivaylo Sakelariev )"
-description: " Личен блог за Психология, Културна еволюция, Статистика, Комуникация на науката"
+title: "Ивайло Сакелариев"
+description: " Личен блог за Психология, Културна еволюция, Статистика, Data Science"
 base_url: https://ivaylo.xyz
 google_analytics: "UA-117970418-1"
 theme: theme.css
-favicon: static/favicon.ico
+favicon: static/scatter-plot.png
 collections:
   posts:
     categories: false
@@ -21,7 +21,7 @@ collections:
 output_dir: "."
 navbar:
   logo:
-    image: static/glitch.png
+    image: static/scatter-plot.png
   right:
     - text: "Начало"
       href: index.html
