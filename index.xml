@@ -4,14 +4,23 @@
     <title>Ивайло Сакелариев</title>
     <link>https://ivaylo.xyz</link>
     <atom:link href="https://ivaylo.xyz/index.xml" rel="self" type="application/rss+xml"/>
-    <description> Личен блог за Психология, Културна еволюция, Статистика, Data Science</description>
+    <description> Личен блог за психология, културна еволюция, статистика, data science</description>
     <image>
       <title>Ивайло Сакелариев</title>
       <url>https://ivaylo.xyz/static/scatter-plot.png</url>
       <link>https://ivaylo.xyz</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 25 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>За какво и кого се говори в българският Reddit? (мини проект)</title>
+      <dc:creator>Ивайло Сакелариев</dc:creator>
+      <link>https://ivaylo.xyz/posts/2022-06-20-reddit-ngram-viewer</link>
+      <description>Българският Reddit (r/bulgaria) е относително малко кътче в Интернет пространството, но пък в него често се дискутират актуални събития за страната и би било интересно да се проследяват трендове за различните теми, хора и събития, които се обсъждат.</description>
+      <guid>https://ivaylo.xyz/posts/2022-06-20-reddit-ngram-viewer</guid>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://ivaylo.xyz/posts/2022-06-20-reddit-ngram-viewer/images/bg-reddit.png" medium="image" type="image/png" width="2628" height="1230"/>
+    </item>
     <item>
       <title>Тестът Myers Briggs – „научният“ хороскоп</title>
       <dc:creator>Ивайло Сакелариев</dc:creator>
