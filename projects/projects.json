@@ -1,5 +1,19 @@
 [
   {
+    "path": "projects/2022-07-24-bg-reddit/",
+    "title": "Bulgarian Reddit Ngram Viewer",
+    "description": "Приложение за визуализиране на различни фрази и думи (N-грами), извлечени от коментарите и постовете на българското Reddit пространство — ([r/bulgaria](https://www.reddit.com/r/bulgaria/))",
+    "author": [],
+    "date": "2022-07-24",
+    "categories": [],
+    "contents": "\n Коментарите бяха извлечени с\nпомощта на subreddit-comments-dl.\nОбработката на данните и създаването на N-gram модела могат да бъдат\nразгледани в този Jupyter\nNotebook\nПриложението е написано на Dash и Python.\n➡️ Линк към\nприложението\nOpen Source\nкод\n\n\n\n",
+    "preview": "projects/2022-07-24-bg-reddit/images/bg-reddit.png",
+    "last_modified": "2022-07-24T17:57:39+03:00",
+    "input_file": {},
+    "preview_width": 2690,
+    "preview_height": 1246
+  },
+  {
     "path": "projects/2022-03-15-grammar-automate/",
     "title": "Writing assistant",
     "description": "Малко приложение, което автоматизира някои граматически правила, които не са лесно достъпни на фонетичната клавиатура на Windows или пък са често пренебрегвани. Създадох го за приятелката ми, за да ѝ спестява време при писането на прессъобщения.",
