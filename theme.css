@@ -13,7 +13,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab');
 @import url('https://fonts.googleapis.com/css2?family=Roboto');
 
-
+<script type="text/plain" src="animation.js"></script>
 
 html {
   /*-- Main font sizes --*/
@@ -65,23 +65,55 @@ d-appendix {
   --text-color:       #000;                     /* edited */
   --text-size:        18px;
   --font-weight:      500;
-  --hover-color:      #ff8f00;                 /* edited */
+  --hover-color:      #000;                 /* edited */
   --bkgd-color:       #fff;                     /* edited */
 }
 
 .distill-site-footer {
-  --text-color:       rgba(255, 255, 255, 0.8);
-  --text-size:        15px;
-  --hover-color:      white;
-  --bkgd-color:       #0F2E3D;
+  --text-color:       #000;
+  --text-size:        12px;
+  --hover-color:      #000;
+  --bkgd-color:       #F8F9FA;
 }
 
 /*-- Additional custom styles --*/
 /* Add any additional CSS rules below                      */
 
 p a:hover  {
-    color: #ff8f00;
+    background-color: #ffd89b;
+    background-size: 100%;
+    background-image:linear-gradient(45deg, #ffd89b, #19547b);
+/*    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent ;
+    text-decoration: underline;--*/
+}
+
+.distill-site-header a:hover {
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(45deg, #ffd89b, #19547b);
+    border-image-slice: 1;
+}
+
+.ball {
+  position: absolute;
+  border-radius: 100%;
+  opacity: 0.5;
+  z-index: 0;
 }
 
 
+d-article a {
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(45deg, #ffd89b, #19547b);
+    border-image-slice: 1;
+    width: 100%;
+}
 
+
+.distill-site-header a, .distill-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 1px 10px;
+}

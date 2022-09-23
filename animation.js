@@ -1,12 +1,5 @@
----
-title: ""
-description: ""
-site: distill::distill_website
-listing: posts
----
-```{js, echo=FALSE, eval=FALSE}
 // Some random colors
-const colors = ["#ffd89b", "#19547b"];
+const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
 
 const numBalls = 50;
 const balls = [];
@@ -46,4 +39,3 @@ balls.forEach((el, i, ra) => {
     }
   );
 });
-```
