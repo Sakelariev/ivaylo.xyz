@@ -4,7 +4,7 @@
     <title>Ивайло Сакелариев</title>
     <link>https://ivaylo.xyz</link>
     <atom:link href="https://ivaylo.xyz/index.xml" rel="self" type="application/rss+xml"/>
-    <description> Личен блог за психология, културна еволюция, статистика, data science</description>
+    <description>Личен блог за психология, културна еволюция, статистика, data science</description>
     <image>
       <title>Ивайло Сакелариев</title>
       <url>https://ivaylo.xyz/static/scatter-plot.png</url>
@@ -28,7 +28,7 @@
       <description>Myers-Briggs тестът несъмнено е най-популярният тест за установяване на личностния тип. Дали обаче се справя със задачата да определи индивидуалните личностни характеристики? И дали изобщо тези характеристики биха ни помогнали да прогнозираме бъдещо поведение?</description>
       <guid>https://ivaylo.xyz/posts/2022-03-13-myers-briggs</guid>
       <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://ivaylo.xyz/posts/2022-03-13-myers-briggs/images/intj.jpg" medium="image" type="image/jpeg"/>
+      <media:content url="https://ivaylo.xyz/posts/2022-03-13-myers-briggs/images/cover_hokusai.png" medium="image" type="image/png" width="1920" height="1024"/>
     </item>
     <item>
       <title>За черешите и гроздето. Една климатична история.</title>

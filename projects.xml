@@ -4,7 +4,7 @@
     <title>Ивайло Сакелариев</title>
     <link>https://ivaylo.xyz</link>
     <atom:link href="https://ivaylo.xyz/projects.xml" rel="self" type="application/rss+xml"/>
-    <description> Личен блог за психология, културна еволюция, статистика, data science</description>
+    <description>Личен блог за психология, културна еволюция, статистика, data science</description>
     <image>
       <title>Ивайло Сакелариев</title>
       <url>https://ivaylo.xyz/static/scatter-plot.png</url>
