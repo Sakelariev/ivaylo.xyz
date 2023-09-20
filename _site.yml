@@ -2,7 +2,7 @@ name: "ivaylo.xyz"
 title: "Ивайло Сакелариев"
 description: "Личен блог за психология, културна еволюция, статистика, data science"
 base_url: https://ivaylo.xyz
-google_analytics: "UA-117970418-1"
+google_analytics: "G-03HDD49B63"
 theme: theme.css
 favicon: static/scatter-plot.png
 collections:
