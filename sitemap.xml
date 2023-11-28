@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://ivaylo.xyz/about.html</loc>
-    <lastmod>2023-04-16T13:14:41+03:00</lastmod>
+    <lastmod>2023-10-17T10:09:58+03:00</lastmod>
   </url>
   <url>
     <loc>https://ivaylo.xyz/</loc>
@@ -23,6 +23,10 @@
   <url>
     <loc>https://ivaylo.xyz/posts/2021-07-04-cherry-grape/</loc>
     <lastmod>2022-05-25T18:11:10+03:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ivaylo.xyz/projects/2023-11-23-bulgarian-spacy-models/</loc>
+    <lastmod>2023-11-28T12:20:35+02:00</lastmod>
   </url>
   <url>
     <loc>https://ivaylo.xyz/projects/2022-07-24-bg-reddit/</loc>

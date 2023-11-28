@@ -19,6 +19,8 @@ description: ''
 
 ![](images/GitHub-Mark-32px.png){width="3%"} [Github](https://github.com/sakelariev "https://github.com/sakelariev")
 
+![](images/hf.png){width="3%"} [Huggingface](https://huggingface.co/sakelariev "https://huggingface.co/sakelariev")
+
 ## Образование
 
 -   BAW (Bayerischen Akademie für Werbung und Marketing)\

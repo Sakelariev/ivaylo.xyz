@@ -11,7 +11,15 @@
       <link>https://ivaylo.xyz</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 24 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Bulgarian spaCy models</title>
+      <link>https://ivaylo.xyz/projects/2023-11-23-bulgarian-spacy-models</link>
+      <description>Български spaCy модели за анализ на текст</description>
+      <guid>https://ivaylo.xyz/projects/2023-11-23-bulgarian-spacy-models</guid>
+      <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://ivaylo.xyz/projects/2023-11-23-bulgarian-spacy-models/images/streamlit_demo.png" medium="image" type="image/png" width="551" height="369"/>
+    </item>
     <item>
       <title>Bulgarian Reddit Ngram Viewer</title>
       <link>https://ivaylo.xyz/projects/2022-07-24-bg-reddit</link>
