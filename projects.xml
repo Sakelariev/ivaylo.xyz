@@ -15,7 +15,7 @@
     <item>
       <title>Bulgarian spaCy models</title>
       <link>https://ivaylo.xyz/projects/2023-11-23-bulgarian-spacy-models</link>
-      <description>Български spaCy модели за анализ на текст</description>
+      <description>Български spaCy модели за анализ на текст, тренирани върху корпус от медийни текстове - токенизация, лематизация, разпознаване на части на речта (POS tagger), граматичен, морфологичен и синтактичен анализ, Named Entity Recognition (NER)</description>
       <guid>https://ivaylo.xyz/projects/2023-11-23-bulgarian-spacy-models</guid>
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
       <media:content url="https://ivaylo.xyz/projects/2023-11-23-bulgarian-spacy-models/images/streamlit_demo.png" medium="image" type="image/png" width="551" height="369"/>
