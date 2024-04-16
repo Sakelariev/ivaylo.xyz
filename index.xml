@@ -11,7 +11,16 @@
       <link>https://ivaylo.xyz</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>r/bulgaria – новия “стар” български форум</title>
+      <dc:creator>Ивайло Сакелариев</dc:creator>
+      <link>https://ivaylo.xyz/posts/2024-04-11-reddit-analysis</link>
+      <description>Първи блог пост с анализ на най-големия български събредит (/r/bulgaria). В статията разглеждам разпределението на теми в дискусиите на събредита от 2008 до края на 2023 година и поставям основите за две други мини-изследвания.</description>
+      <guid>https://ivaylo.xyz/posts/2024-04-11-reddit-analysis</guid>
+      <pubDate>Tue, 16 Apr 2024 00:00:00 +0000</pubDate>
+      <media:content url="https://ivaylo.xyz/posts/2024-04-11-reddit-analysis/images/umap.png" medium="image" type="image/png" width="903" height="537"/>
+    </item>
     <item>
       <title>За какво и кого говори българският Reddit? (мини проект)</title>
       <dc:creator>Ивайло Сакелариев</dc:creator>
