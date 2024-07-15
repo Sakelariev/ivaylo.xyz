@@ -16,6 +16,5 @@ output:
 
 Приложението е написано на [Dash](https://plotly.com/dash/) и Python.
 
-➡️ [**Линк към приложението**](http://reddit.ivaylo.xyz)
 
 ![](images/GitHub-Mark-32px.png){width="3%"} [**Open Source код**](https://github.com/sakelariev/bg-reddit)

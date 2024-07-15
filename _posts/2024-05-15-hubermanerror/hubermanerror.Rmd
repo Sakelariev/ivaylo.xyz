@@ -1,0 +1,27 @@
+---
+title: "huberman_mistake"
+output: html_document
+date: "2024-05-15"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+Huberman makes a huge mistake saying that “if you have a 20% chance of pregnancy in any given month, the chance of being pregnant after 6 months is 120%”. Let's make the actual calculations to learn from his mistake.
+```{r}
+# Likelihood of not getting pregnant after 6 months of trying with 20% probability each month
+prob_not = dbinom(0, size=6, prob = 0.2)
+print(paste("Likelihood of not getting pregnant:", prob_not))
+
+# Likelihood of getting pregnant
+prob_pregnant = 1 - dbinom(0, size=6, prob = 0.2)
+print(paste("Likelihood of getting pregnant: ", prob_pregnant))
+```
+Now let's see the analytical solution as well.
+```{r}
+ 1-(0.8^6)
+```
+

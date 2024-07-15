@@ -20,10 +20,10 @@
     "author": [],
     "date": "2022-07-24",
     "categories": [],
-    "contents": "\n Коментарите бяха извлечени с\nпомощта на subreddit-comments-dl.\nОбработката на данните и създаването на N-gram модела могат да бъдат\nразгледани в този Jupyter\nNotebook\nПриложението е написано на Dash и Python.\n➡️ Линк към\nприложението\nOpen Source\nкод\n\n\n\n",
+    "contents": "\n Коментарите бяха извлечени с помощта на subreddit-comments-dl.\nОбработката на данните и създаването на N-gram модела могат да бъдат разгледани в този Jupyter Notebook\nПриложението е написано на Dash и Python.\nOpen Source код\n\n\n\n",
     "preview": "projects/2022-07-24-bg-reddit/images/bg-reddit.png",
-    "last_modified": "2022-07-24T17:57:39+03:00",
-    "input_file": {},
+    "last_modified": "2024-07-15T14:54:19+03:00",
+    "input_file": "bg-reddit.knit.md",
     "preview_width": 2690,
     "preview_height": 1246
   },
